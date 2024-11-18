@@ -1,0 +1,13 @@
+/* Réinitialisation des marges */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles pour les composants de l'application */
+  app-navbar, router-outlet, app-footer {
+    display: block; /* Assurez-vous que chaque composant est affiché en tant que bloc */
+    margin: 200px; /* Supprime toutes les marges */
+    padding: 0; /* Supprime tous les paddings */
+  }
+  

@@ -1,0 +1,49 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of admin">
+        <th scope="row">{{ user.id }}</th>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.password }}</td>
+        <td>
+          <span class="btn btn-danger" (click)="DeleteUser(user)">
+            <i class="fas fa-trash"></i> </span>
+          <span class="btn btn-primary" (click)="ToggleEditMode(user)">
+            <i class="fas fa-edit"></i> </span>
+        </td>
+        
+    </tbody>
+  </table>
+  
+  <div class="card edit-form">
+  <div class="card-body">
+    <h3 class="card-title">Edit User</h3>
+    <form [formGroup]="form" (ngSubmit)="UpdateUser()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" formControlName="username" placeholder="Enter username">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" formControlName="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" formControlName="password" placeholder="Enter password">
+      </div>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+  

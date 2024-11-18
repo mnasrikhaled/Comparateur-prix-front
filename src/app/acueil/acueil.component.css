@@ -1,0 +1,110 @@
+/* Base Layout Styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+   /* Uniform spacing */
+}
+
+
+.card {
+  /* background: none; */ /* Remove background */
+  max-width: 300px; /* Maximum card width */
+  background: linear-gradient(to right, #0866e0 ,  rgb(141, 201, 241)); /* Blue gradient */
+  margin: 20px; /* Spacing between cards */
+  border-radius: 10px;
+  border: 2px solid #c084fc; /* Purple border */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animations */
+  mix-blend-mode: multiply; /* Remove white background */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Image Styles */
+.card img {
+  width: 100%;
+  height: 300px; /* Increased height for larger display */
+  object-fit: cover; /* Ensures the image covers the area, might crop */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+/* Header Styles */
+.card-header {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8); /* Slightly transparent header */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #252b32;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0;
+  display: flex; /* Align center */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Body Styles */
+.card-body {
+  padding: 20px;
+  
+}
+
+/* List Group Styles */
+.list-group {
+  list-style: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.list-group a {
+  display: flex; /* Allows for alignment of items */
+  align-items: center; /* Vertical alignment of links */
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+.list-group a:hover {
+  background-color: #d0e1f0; /* Color change on hover */
+  transform: translateX(10px); /* Horizontal shift for dynamic effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .container {
+    justify-content: center; /* Center cards on small screens */
+  }
+
+  .card {
+    flex: 0 0 100%; /* Each card takes full width available */
+    max-width: none; /* Remove max width */
+
+  }
+}
+
+/* Utility Styles */
+.price_and_info {
+  padding: 0;
+}
+
+.price_priceWithCurrency__Ep048,
+.product-title_productName__0lz8Z,
+.product-title_productInformation__Tw4ik {
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+}

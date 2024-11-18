@@ -1,0 +1,107 @@
+/* Consider using a CSS reset like Normalize.css */
+
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  background-image: linear-gradient(to bottom, #4c6ef5, #63b3ed);
+  min-height: 100vh; /* Fallback for browsers not supporting vh-100 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  padding: 5rem 0;
+}
+
+/* Modified Card Styles */
+.card {
+  max-width: 400px; /* Maximum card width */
+  background: linear-gradient(to right, #6a82fb, #9b9cdd); /* Blue gradient */
+  margin: -300px; /* Spacing between cards */
+  border-radius: 10px;
+  border: 2px solid #c084fc; /* Purple border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animations */
+  mix-blend-mode: multiply; /* Blend mode for color */
+}
+
+.card-title {
+  font-size: 24px; /* From your previous card styles */
+  text-align: center; /* From your previous card styles */
+  margin-bottom: 20px; /* From your previous card styles */
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 20px; /* From your previous card styles */
+}
+
+.form-label {
+  font-size: 16px; /* From your previous card styles */
+  color: #ffffff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px; /* From your previous card styles */
+  border: 1px solid #ced4da; /* From your previous card styles */
+  border-radius: 4px; /* From your previous card styles */
+}
+
+.btn {
+  padding: 10px 20px; /* From your previous card styles */
+  font-size: 16px; /* From your previous card styles */
+  border: none; /* From your previous card styles */
+  border-radius: 4px; /* From your previous card styles */
+  cursor: pointer; /* From your previous card styles */
+}
+
+.btn-success {
+  background-color: #28a745; /* From your previous card styles */
+  color: #ffffff; /* From your previous card styles */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* From your previous card styles */
+}
+
+/* Other styles from your previous code... */
+
+.fab {
+  color: white;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+  color: #0056b3;
+}
+
+.fab:hover {
+  color: #ddd;
+}
+
+/* Responsive Design (Optional): Use media queries to adjust styles for different screen sizes */
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%; /* Adjust width for smaller screens, if needed */
+  }
+}

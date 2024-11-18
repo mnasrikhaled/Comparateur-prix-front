@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of paginatedProducts" class="col-md-3">
+      <div class="card mb-4">
+        <img class="card-img-top" [src]="product.image" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.productName }}</h5>
+          <p class="card-text">Category: {{ product.category }}</p>
+          <button type="button" class="btn btn-outline-danger" (click)="addToWishlist(product)">
+            <i class="fas fa-heart"></i> Add to Wishlist
+          </button>
+          <button type="button" class="btn btn-warning" (click)="navigateToComparison(product)">Compare Prices</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-paginator [length]="totalProducts" [pageSize]="pageSize" (page)="onPageChange($event)">
+  </mat-paginator>
+</div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <div class="header-logo flex items-center">
+      <a href="#" class="navbar-brand">
+        <img src="/assets/images/aa.jpeg" alt="Price Wise Logo" class="w-8 h-8 mr-2">
+        <span class="text-xl font-bold">Price Wise</span>
+      </a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a [routerLink]="['/accueil']"><i class="fas fa-home"></i></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-list"></i> Catégories
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="categories-list">
+                  <li class="dropdown-submenu" *ngFor="let category of categories">
+                    <a class="dropdown-item" (click)="selectCategory(category)">{{ category }}</a>
+                    <ul class="dropdown-menu">
+                      <li *ngFor="let subcategory of subcategories[category]">
+                        <a class="dropdown-item" [routerLink]="['/categories',subcategory]"  (click)="onThemeClick(category)">{{ subcategory }}</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            
+            <form class="form-inline search-bar">
+              <div class="container relative">
+                <input
+                  type="text"
+                  #searchInput
+                  (input)="search(searchInput.value)"
+                  placeholder="Recherche..."
+                />
+                <i class="fas fa-search search-icon"></i>
+                <ul class="suggestions" *ngIf="suggestions.length > 0">
+                  <li *ngFor="let suggestion of suggestions">
+                    <a [routerLink]="['/comparaison', suggestion.id]">
+                      {{ suggestion.productName }}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+            
+            
+
+            <a class="nav-link"  [routerLink]="['/wishlist/:id']"><i class="fa fa-heart"></i> Ma selection</a>
+           
+
+            
+            <a class="nav-link" *ngIf="!authService.isLoggedIn" [routerLink]="['/signin']">
+              <i class="fas fa-user"></i> Connexion
+            </a>
+            <a class="nav-link" *ngIf="authService.isLoggedIn">
+              <i class="fas fa-user"></i> {{ username }}
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <li class="nav-link logout-button" *ngIf="authService.isLoggedIn">
+          <button (click)="logout()">Logout</button>
+        </li>
+      </div>
+    </nav>
+  </div>
+</header>
+</body>
+</html>

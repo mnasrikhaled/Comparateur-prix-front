@@ -1,0 +1,55 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Sign In</h5>
+          <form class="row g-3" [formGroup]="form" (ngSubmit)="login()">
+            <div class="col-md-12">
+              <label for="validationServerUsername" class="form-label">
+                <i [ngClass]="{ 'fas fa-user': true }"></i> Username
+              </label>
+              <div class="input-group has-validation">
+                <input type="text" formControlName="username" class="form-control" 
+                  [ngClass]="{
+                    'is-valid': form.controls['username'].valid && (form.controls['username'].dirty || form.controls['username'].touched),
+                    'is-invalid': form.controls['username'].invalid && (form.controls['username'].dirty || form.controls['username'].touched)
+                  }" 
+                  id="validationServerUsername" aria-describedby="validationServerUsernameFeedback" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="validationServerPassword" class="form-label">
+                <i [ngClass]="{ 'fas fa-lock': true }"></i> Password
+              </label>
+              <input type="password" formControlName="password" class="form-control" 
+                [ngClass]="{
+                  'is-valid': form.controls['password'].valid && (form.controls['password'].dirty || form.controls['password'].touched),
+                  'is-invalid': form.controls['password'].invalid && (form.controls['password'].dirty || form.controls['password'].touched)
+                }" 
+                id="validationServerPassword" aria-describedby="validationServerPasswordFeedback" required>
+              <div id="validationServerPasswordFeedback" class="invalid-feedback">
+                Please provide a password (minimum 6 characters).
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+          <div class="signup-link mt-3">
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+          </div>
+          <div *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+            {{ successMessage }}
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+            {{ errorMessage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

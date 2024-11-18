@@ -1,0 +1,17 @@
+/* Styles pour l'élément iframe */
+iframe {
+    width: 100%; /* Définit la largeur de l'iframe à 100% de la largeur de son conteneur */
+    height: 800px; /* Définit la hauteur de l'iframe */
+    border: none; /* Supprime la bordure par défaut de l'iframe */
+  }
+  
+  /* Styles pour le chargement en cours */
+  iframe::before {
+    content: "Chargement en cours..."; /* Affiche un message de chargement en cours si l'iframe met du temps à charger */
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+  }

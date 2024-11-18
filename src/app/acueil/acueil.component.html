@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Assurez-vous de charger les styles CSS corrects -->
+  <link rel="stylesheet" href="acueil.component.css">
+</head>
+<body>
+ 
+
+  <!-- Contenu principal -->
+  <div class="container">
+    <!-- Utilisez *ngFor pour parcourir chaque thème -->
+    <div *ngFor="let themeItem of themes; let i = index" class="card mb-4">
+      <!-- Utilisez la source d'image dynamique en fonction de l'index -->
+      <img [src]="'assets/images/' + themeImages[i]" class="card-img-top" alt="{{ themeItem }}">
+      <div class="card-header">
+        <!-- Affichez le nom du thème -->
+        <h5 class="card-title">{{ themeItem }}</h5>
+      </div>
+      <div class="card-body">
+        <!-- Utilisez *ngFor pour parcourir chaque catégorie de chaque thème -->
+        <div *ngFor="let category of categories[themeItem]" class="list-group mb-3">
+          <!-- Utilisez le lien routerLink pour naviguer vers la page des catégories -->
+          <!-- Assurez-vous de passer le nom de la catégorie en tant que paramètre -->
+          <a [routerLink]="['/categories', category]" >{{ category }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

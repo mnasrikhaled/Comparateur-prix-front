@@ -1,0 +1,124 @@
+
+  
+  /* Product Details */
+  .product-details {
+    border: 2px solid #007bff; /* Blue border around the entire product details section */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-info {
+    display: flex;
+  }
+  
+  .product-image {
+    width: 200px;
+    height: auto;
+    margin-right: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  .product-description {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .brand-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .brand-image {
+    width: 70px;
+    height: auto;
+  }
+  
+  /* Alert Button */
+  .alert-button {
+    background-color: #1900ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .alert-button:hover {
+    background-color: #5c69ff;
+  }
+  
+  .alert-button i {
+    margin-right: 5px;
+  }
+  
+  .product-details .alert-button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Product Comparison */
+  .product-comparison {
+    text-align: right;
+    margin: 0 auto;
+    width: 90%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid #000000; /* Blue border around the entire product details section */
+
+  }
+
+/* Cellules du tableau */
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 15px; /* Légèrement plus de marge intérieure */
+    text-align: left;
+    border: 2px solid #000000; /* Blue border around the entire product details section */
+
+}
+
+/* En-tête du tableau */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold; /* Mettez en gras l'en-tête du tableau */
+}
+
+/* Bouton de lien */
+.link-button {
+    background-color: #007bff;   /* Blue border around the entire product details section */
+
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style au survol du bouton */
+.link-button:hover {
+    background-color: #5c69ff;
+}
+
+  

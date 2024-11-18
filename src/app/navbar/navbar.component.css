@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Rock+Salt&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    border: 2px solid #0800ff; /* Purple border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header.scrolled {
+    padding: 5px 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-logo {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #493a94;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.search-bar {
+  position: relative;
+  margin-left: auto;
+
+}
+
+.search-bar input {
+  width: 300px;
+  height: 40px;
+  padding: 5px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  padding-right: 40px; /* Add space for the icon */
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search-bar .suggestions {
+  position: absolute;
+  width: 700px;
+  height: 1000px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  max-height: 200px; /* Limite la hauteur pour le défilement */
+  overflow-y: auto; /* Ajoute une barre de défilement si nécessaire */
+}
+
+.search-bar .suggestions li {
+  border-radius: 10px;
+  border: 1px solid #000000;
+  
+}
+
+.search-bar .suggestions li a {
+  text-decoration: none;
+  color: #4a7bbf;
+  display: block;
+}
+
+.search-bar .suggestions li a:hover {
+  background: #f0f0f0;
+}
+
+
+
+.cart-button {
+    position: relative;
+    margin-left: 10px;
+}
+
+.cart-button i {
+    color: #333;
+    cursor: pointer;
+}
+
+.cart-button span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #ff3b30;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.cart-button:hover {
+    color: #ff3b30;
+}
+
+.cart-button:hover i {
+    color: #fff;
+}
+
+.cart-button:hover span {
+    background-color: #fff;
+    color: #ff3b30;
+}
+
+/* Mobile Navigation */
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 5px;
+    }
+
+    .navbar a {
+        margin: 0 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .cart-button {
+        margin-left: 0;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+    }
+}
+
+/* Dropdown menu styles */
+
+.categories-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.subcategories-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown-item {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  color: #ccc;
+}
+
+.nav-item.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  display: none;
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}

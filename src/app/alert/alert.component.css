@@ -1,0 +1,88 @@
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+section {
+  min-height: 100vh; /* Full viewport height */
+  display: flex; /* Enable flexbox for centering */
+  justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Center elements vertically */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Modified Card Styles */
+.card {
+  max-width: 400px; /* Maximum card width */
+  background: linear-gradient(to right, #f0f4f8, #cfe0e8); /* Lighter gradient */
+  margin: 20px; /* Spacing around the card */
+  border-radius: 10px;
+  border: 2px solid #c084fc; /* Purple border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animations */
+  mix-blend-mode: multiply; /* Blend mode for color */
+  padding: 20px; /* Internal padding for content */
+  text-align: center; /* Center align text */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  color: #252b32;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Budget Input Section */
+.budget-input {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.budget-input label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.budget-input input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff; /* Adjust color as needed */
+  color: #fff;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
